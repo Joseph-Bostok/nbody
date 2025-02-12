@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <ctime>
 #include <fstream>
+#include <chrono>
 
 using namespace std;
 
@@ -26,7 +27,7 @@ private:
 
 public:
     /**
-     * Constructor for nbodySim
+     * Constructor for nbodySima
      *
      * @param numParticles number of particles to simulate
      * @param dt time step of simulation
@@ -174,7 +175,11 @@ int main(int argc, char *argv[]) {
     int dumpInterval = atoi(argv[4]);
 
     nbodySim simulation(numParticles, dt, numSteps, dumpInterval);
+    auto startTime = chrono::high_resolution_clock::now();//start timer
     simulation.runSimulation();
+    auto endTime = chrono::high_resolution_clock::now(); //end timer
+    auto duration = chrono::duration_cast<chrono::milliseconds>(endTime - startTime); //calculate time taken
+    cout << "Time taken: " << duration.count() << "ms" << endl;
 
     return 0;
 }
