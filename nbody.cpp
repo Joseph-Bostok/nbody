@@ -6,7 +6,7 @@
 #include <fstream>
 #include <chrono>
 
-using namespace std;
+using namespace std; 
 
 const double G = 6.674 * 1e-11;
 const double softening = 1e-5;
@@ -63,6 +63,18 @@ public:
             }
         }
 
+    /**
+     * Computes the gravitational force on each particle due to all other particles.
+     *
+     * This function iterates over all particles and computes the gravitational force
+     * on each particle due to all other particles using the formula:
+     *
+     * F = G * m1 * m2 / r^2
+     *
+     * where F is the force, G is the gravitational constant, m1 and m2 are the
+     * masses of the two particles, and r is the distance between them. The force
+     * is then added to the fx, fy, and fz components of each particle.
+     */
     void computeForces(){
         for(auto &p : particles){
             p.fx = p.fy = p.fz = 0.0; //reset force
