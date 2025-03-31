@@ -4,6 +4,7 @@ time calculations in ms(centaurus):
 -100 particles dt=1 for 10000 steps: Time taken: 2110ms
 -1000 particles dt=1 for 10000 steps: 204470ms
 _______random particle and steps below____________________________________________
+
 500 particles dt= 1	50,000 steps 1,000 dump interval: 255766ms
 5000 particles dt= 1 50,000 steps 1,0000 dump interval: (ran out of time)
 
@@ -14,6 +15,7 @@ time calculations in ms(local machine):
 -100 particles dt=1 for 10000 steps: Time taken: 2789ms
 -1000 particles dt=1 for 10000 steps: Time taken: 213930ms
 _______random particle and steps below____________________________________________
+
 500 particles dt= 1	50,000 steps 1,000 dump interval: 419334ms
 5000 particles dt= 1 50,000 steps 1,0000 dump interval:(failed on local machine)
 
